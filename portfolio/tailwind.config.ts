@@ -6,12 +6,15 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+        primary: "#2DD4BF", // Teal
+        secondary: "#A855F7", // Purple
+        accent: "#F472B6", // Pink
+        dark: "#0F172A", // Navy
+      }, 
     },
   },
   plugins: [],
