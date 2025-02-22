@@ -13,7 +13,8 @@ export default {
         primary: "#2DD4BF", // Teal
         secondary: "#A855F7", // Purple
         accent: "#F472B6", // Pink
-        dark: "#0F172A", // Navy
+        highlight: "#1e40af ", // Indigo
+        highlight_dark: "#1e3a8a ", // Indigo
       }, 
     },
   },

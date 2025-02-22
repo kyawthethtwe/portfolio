@@ -77,7 +77,7 @@ const SkillIcon = ({ Icon, name, description }: { Icon: React.ElementType; name:
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <Icon className="w-12 h-12 text-gray-700 dark:text-gray-300 mb-2" />
+          <Icon className="w-12 h-12 text-primary mb-2" />
           <span className="text-sm text-gray-600 dark:text-gray-400">{name}</span>
         </motion.div>
       </TooltipTrigger>

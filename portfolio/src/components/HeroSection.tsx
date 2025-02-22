@@ -25,7 +25,7 @@ export default function HeroSection() {
         </svg>
       </div>
       <motion.h1
-        className="text-4xl md:text-6xl font-bold mb-4"
+        className="text-4xl md:text-6xl font-bold mb-4 "
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -34,7 +34,7 @@ export default function HeroSection() {
       </motion.h1>
 
       <motion.p
-        className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8"
+        className="text-lg md:text-xl mb-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.0 }}
@@ -48,8 +48,8 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
       >
-        <Button className="bg-blue-600 text-white hover:bg-blue-700">View My Work</Button>
-        <Button variant="outline">Download Resume</Button>
+        <Button className="">View My Work</Button>
+        <Button >Download Resume</Button>
       </motion.div>
     </section>
   )

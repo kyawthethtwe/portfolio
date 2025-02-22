@@ -23,7 +23,9 @@ export default function AboutMe() {
           className="flex flex-col md:flex-row items-center gap-8 mb-16"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
+       
           transition={{ duration: 0.5 }}
+
         >
           {/* Image Column */}
           <motion.div
@@ -68,7 +70,7 @@ export default function AboutMe() {
                 </SwiperSlide>
               ))}
             </Swiper>
-            <Button className="bg-blue-600 text-white hover:bg-blue-700">Download Resume</Button>
+            <Button className="">Download Resume</Button>
           </motion.div>
         </motion.div>
 
