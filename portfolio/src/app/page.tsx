@@ -1,8 +1,10 @@
 
 import AboutMe from "@/components/AboutMe";
 import Education from "@/components/Education";
+import Experience from "@/components/Experiences";
 import HeroSection from "@/components/HeroSection";
 import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
 export default function Home() {
 
   return (
@@ -11,6 +13,8 @@ export default function Home() {
       <AboutMe />
       <Education />
       <Projects />
+      <Experience />
+      <Contact />
     </main>
   );
 }

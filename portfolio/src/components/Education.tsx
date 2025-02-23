@@ -153,24 +153,24 @@ const EducationCard: React.FC<{ entry: EducationEntry }> = ({ entry }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+      className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md h-full"
     >
       <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
         {entry.degree} in {entry.major}
       </h3>
       <div className="flex items-center mb-2">
-        <GraduationCap className="w-5 h-5 mr-2 text-teal-500 dark:text-teal-400" />
+        <GraduationCap className="w-5 h-5 mr-2 text-primary " />
         <span className="text-gray-600 dark:text-gray-300">{entry.university}</span>
       </div>
       <div className="flex items-center mb-4">
-        <Calendar className="w-5 h-5 mr-2 text-teal-500 dark:text-teal-400" />
+        <Calendar className="w-5 h-5 mr-2 text-primary" />
         <span className="text-gray-600 dark:text-gray-300">{entry.year}</span>
       </div>
       {entry.achievements && (
         <ul className="mt-4 space-y-2">
           {entry.achievements.map((achievement, i) => (
             <li key={i} className="flex items-start">
-              <Award className="w-5 h-5 mr-2 text-pink-500 dark:text-pink-400 flex-shrink-0 mt-1" />
+              <Award className="w-5 h-5 mr-2 text-accent flex-shrink-0 mt-1" />
               <span className="text-gray-600 dark:text-gray-300">{achievement}</span>
             </li>
           ))}
@@ -205,13 +205,13 @@ const Education: React.FC = () => {
                     onClick={() => setSelectedEducation(entry)}
                     className={`w-full text-left p-2 rounded-lg transition-colors duration-200 flex items-center ${
                       selectedEducation.id === entry.id
-                        ? "bg-teal-500 text-white"
-                        : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-teal-100 dark:hover:bg-teal-900"
+                        ? "bg-primary text-white"
+                        : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-primary/50 dark:hover:bg-primary/50"
                     }`}
                   >
                     <div
                       className={`w-4 h-4 rounded-full mr-3 ${
-                        selectedEducation.id === entry.id ? "bg-white" : "bg-teal-500"
+                        selectedEducation.id === entry.id ? "bg-white" : "bg-primary"
                       }`}
                     ></div>
                     <span>{entry.year}</span>
