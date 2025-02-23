@@ -17,7 +17,7 @@ export default function AboutMe() {
   ]
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section className="py-16 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800" id="about">
       <div className="container mx-auto px-4">
         <motion.div
           className="flex flex-col md:flex-row items-center gap-8 mb-16"

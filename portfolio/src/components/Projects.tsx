@@ -101,7 +101,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
 
 export default function Projects() {
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900" id="projects">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
