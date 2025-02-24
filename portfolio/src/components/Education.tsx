@@ -110,6 +110,7 @@ import type React from "react"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { GraduationCap, Calendar, Award } from "lucide-react"
+import HeaderLine from "./HeaderLine"
 
 interface EducationEntry {
   id: number
@@ -186,14 +187,7 @@ const Education: React.FC = () => {
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900" id="education">
       <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800 dark:text-white"
-        >
-          Education
-        </motion.h2>
+        <HeaderLine title="Education" />
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8">
           <div className="md:w-1/3">
             <div className="sticky top-24">

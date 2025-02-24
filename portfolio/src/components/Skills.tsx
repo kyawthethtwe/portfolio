@@ -57,16 +57,15 @@ import {
   SiRedux,
   SiReactquery,
   SiTailwindcss,
-  SiJavascript,
   SiHtml5,
   SiCss3,
   SiAxios,
   SiZod,
   SiReacthookform,
-  SiExpress,
   SiNodedotjs,
 } from "react-icons/si"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import HeaderLine from "./HeaderLine"
 
 const SkillIcon = ({ Icon, name, description }: { Icon: React.ElementType; name: string; description: string }) => (
   <TooltipProvider>
@@ -152,7 +151,7 @@ export default function Skills() {
 
   return (
     <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-      <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">My Techstack</h3>
+      <HeaderLine title="Tech Stack" />
       <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
         {skills.map((skill, index) => (
           <SkillIcon key={index} Icon={skill.Icon} name={skill.name} description={skill.description} />

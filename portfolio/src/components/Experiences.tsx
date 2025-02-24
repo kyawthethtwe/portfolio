@@ -3,7 +3,7 @@
 import type React from "react"
 import { motion } from "framer-motion"
 import { Briefcase, Calendar } from "lucide-react"
-
+import HeaderLine from "./HeaderLine"
 interface ExperienceEntry {
   id: number
   jobTitle: string
@@ -87,14 +87,7 @@ const Experience: React.FC = () => {
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900" id="experience">
       <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800 dark:text-white"
-        >
-          Experience
-        </motion.h2>
+        <HeaderLine title="Experience" />
         <div className="max-w-3xl mx-auto">
           {experienceData.map((entry, index) => (
             <ExperienceCard key={entry.id} entry={entry} index={index} />

@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import HeaderLine from "./HeaderLine"
 
 interface Project {
   id: number
@@ -103,14 +104,7 @@ export default function Projects() {
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900" id="projects">
       <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold mb-8 text-center text-gray-800 dark:text-white"
-        >
-          Projects
-        </motion.h2>
+        <HeaderLine title="Projects" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />

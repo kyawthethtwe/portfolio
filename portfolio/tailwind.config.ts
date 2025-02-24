@@ -11,6 +11,7 @@ export default {
     extend: {
       colors: {
         primary: "#2DD4BF", // Teal
+        primary_dark: "#2dd4bf", // Teal
         secondary: "#A855F7", // Purple
         accent: "#F472B6", // Pink
         highlight: "#1e40af ", // Indigo

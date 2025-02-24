@@ -8,6 +8,7 @@ import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 import Skills from "./Skills"
+import HeaderLine from "./HeaderLine"
 
 export default function AboutMe() {
   const aboutTexts = [
@@ -20,7 +21,7 @@ export default function AboutMe() {
     <section className="py-16 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800" id="about">
       <div className="container mx-auto px-4">
         <motion.div
-          className="flex flex-col md:flex-row items-center gap-8 mb-16"
+          className="flex flex-col md:flex-row items-center gap-8 mb-16 "
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
        
@@ -51,12 +52,15 @@ export default function AboutMe() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 dark:text-white">About Me</h2>
+            <HeaderLine title="About Me" />
             <Swiper
               modules={[Pagination, Mousewheel, Autoplay]}
               spaceBetween={50}
               slidesPerView={1}
-              mousewheel
+              mousewheel = {{
+                invert: false,
+                forceToAxis: true,
+              }}
               autoplay={{ 
                 delay: 6000,
                 disableOnInteraction: false,
