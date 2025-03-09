@@ -2,24 +2,24 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import MainPadding from "./MainPadding";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F172A] text-gray-300 py-8 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-        
+    <MainPadding className="bg-[#0F172A] text-gray-300 py-8 px-6 md:px-12">
+      <div className=" flex flex-col md:flex-row justify-between items-center">
         {/* Logo / Name */}
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-xl font-semibold text-primary"
+          className="text-xl 2xl:text-2xl font-semibold text-primary"
         >
           Kyaw Thet Htwe
         </motion.div>
 
         {/* Navigation Links */}
-        <nav className="flex space-x-6 mt-4 md:mt-0">
+        <nav className="flex space-x-6 mt-4 md:mt-0 text-base 2xl:text-lg">
           {["Home", "About", "Projects", "Experience", "Contact"].map((item) => (
             <Link 
               key={item} 
@@ -32,22 +32,22 @@ export default function Footer() {
         </nav>
 
         {/* Social Media Icons */}
-        <div className="flex space-x-5 mt-4 md:mt-0">
+        <div className="flex space-x-5 mt-4 md:mt-0 ">
           <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
-            <FaGithub className="text-2xl hover:text-accent transition-colors" />
+            <FaGithub className="text-2xl 2xl:text-3xl hover:text-accent transition-colors" />
           </a>
           <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin className="text-2xl hover:text-accent transition-colors" />
+            <FaLinkedin className="text-2xl 2xl:text-3xl hover:text-accent transition-colors" />
           </a>
           <a href="mailto:your@email.com">
-            <FaEnvelope className="text-2xl hover:text-accent transition-colors" />
+            <FaEnvelope className="text-2xl 2xl:text-3xl  hover:text-accent transition-colors" />
           </a>
         </div>
 
       </div>
 
       {/* Copyright & Back to Top */}
-      <div className="text-center text-sm mt-6">
+      <div className="text-center text-sm mt-6 2xl:text-base">
         <p>© {new Date().getFullYear()} Kyaw Thet Htwe. All Rights Reserved.</p>
         <button 
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} 
@@ -56,6 +56,6 @@ export default function Footer() {
           Back to Top ↑
         </button>
       </div>
-    </footer>
+    </MainPadding>
   );
 }
