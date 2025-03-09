@@ -1,51 +1,3 @@
-// "use client"
-
-// import type React from "react"
-// import { motion } from "framer-motion"
-// import {
-//   SiNextdotjs,
-//   SiTypescript,
-//   SiReact,
-//   SiReactquery,
-//   SiTailwindcss,
-//   SiJavascript,
-//   SiHtml5,
-//   SiCss3,
-//   SiRedux,
-// } from "react-icons/si"
-
-// const SkillIcon = ({ Icon, name }: { Icon: React.ElementType; name: string }) => (
-//   <motion.div className="flex flex-col items-center" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-//     <Icon className="w-12 h-12 text-gray-700 dark:text-gray-300 mb-2" />
-//     <span className="text-sm text-gray-600 dark:text-gray-400">{name}</span>
-//   </motion.div>
-// )
-
-// export default function Skills() {
-//   const skills = [
-//     { Icon: SiNextdotjs, name: "Next.js" },
-//     { Icon: SiTypescript, name: "TypeScript" },
-//     { Icon: SiReact, name: "React" },
-//     { Icon: SiRedux, name: "Zustand" },
-//     { Icon: SiReactquery, name: "React Query" },
-//     { Icon: SiTailwindcss, name: "Tailwind CSS" },
-//     { Icon: SiJavascript, name: "JavaScript" },
-//     { Icon: SiHtml5, name: "HTML5" },
-//     { Icon: SiCss3, name: "CSS3" },
-//   ]
-
-//   return (
-//     <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-//       <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">My Skills</h3>
-//       <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
-//         {skills.map((skill, index) => (
-//           <SkillIcon key={index} Icon={skill.Icon} name={skill.name} />
-//         ))}
-//       </div>
-//     </motion.div>
-//   )
-// }
-
 "use client"
 
 import type React from "react"
@@ -66,8 +18,9 @@ import {
 } from "react-icons/si"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import HeaderLine from "./HeaderLine"
+import MainPadding from "./MainPadding"
 
-const SkillIcon = ({ Icon, name, description }: { Icon: React.ElementType; name: string; description: string }) => (
+const TechIcons = ({ Icon, name, description }: { Icon: React.ElementType; name: string; description: string }) => (
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger asChild>
@@ -81,14 +34,14 @@ const SkillIcon = ({ Icon, name, description }: { Icon: React.ElementType; name:
         </motion.div>
       </TooltipTrigger>
       <TooltipContent className="w-[200px] bg-white">
-        <p className="text-sm">{description}</p>
+        <p className="text-sm text-black">{description}</p>
       </TooltipContent>
     </Tooltip>
   </TooltipProvider>
 )
 
-export default function Skills() {
-  const skills = [
+export default function Techstacks() {
+  const techs = [
     {
         Icon: SiNextdotjs,
         name: "Next.js",
@@ -150,14 +103,22 @@ export default function Skills() {
   ]
 
   return (
-    <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-      <HeaderLine title="Tech Stack" />
-      <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
-        {skills.map((skill, index) => (
-          <SkillIcon key={index} Icon={skill.Icon} name={skill.name} description={skill.description} />
-        ))}
-      </div>
-    </motion.div>
+    <MainPadding
+      className="py-16  dark:bg-gray-900"
+    >
+      <motion.div 
+      initial={{ opacity: 0, y: 50 }} 
+      animate={{ opacity: 1, y: 0 }} 
+      transition={{ duration: 0.5 }}
+      >
+        <HeaderLine title="Tech Stack" />
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
+          {techs.map((tech, index) => (
+            <TechIcons key={index} Icon={tech.Icon} name={tech.name} description={tech.description} />
+          ))}
+        </div>
+      </motion.div>
+    </MainPadding>
   )
 }
 
