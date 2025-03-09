@@ -111,6 +111,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { GraduationCap, Calendar, Award } from "lucide-react"
 import HeaderLine from "./HeaderLine"
+import MainPadding from "./MainPadding"
 
 interface EducationEntry {
   id: number
@@ -124,27 +125,27 @@ interface EducationEntry {
 const educationData: EducationEntry[] = [
   {
     id: 1,
-    degree: "Master's",
-    major: "Computer Science",
-    university: "Stanford University",
+    degree: "Bachelor's",
+    major: "Information and Communication Technology",
+    university: "Rangsit University",
     year: "2022",
-    achievements: ["Specialized in Artificial Intelligence", "Published 2 research papers in machine learning"],
+    achievements: ["GPAX 3.78", "University Hackathon Finalist"],
   },
   {
     id: 2,
     degree: "Bachelor's",
-    major: "Software Engineering",
-    university: "MIT",
-    year: "2020",
-    achievements: ["Graduated with honors", "Led a team project that won the university's innovation award"],
+    major: "Computer Science",
+    university: "University of Computer Studies, Mandalay",
+    year: "2017",
   },
   {
     id: 3,
-    degree: "Associate's",
-    major: "Web Development",
-    university: "Community College of San Francisco",
-    year: "2018",
-  },
+    degree: "High School",
+    major: "Science and Mathematics",
+    university: "KMC Private High School",
+    year: "2016",
+    achievements: ["Passed with 3 Distinctions","won 1st place in the school's football tournament"],
+  }
 ]
 
 const EducationCard: React.FC<{ entry: EducationEntry }> = ({ entry }) => {
@@ -186,41 +187,41 @@ const Education: React.FC = () => {
 
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900" id="education">
-      <div className="container mx-auto px-4">
+      <MainPadding>
         <HeaderLine title="Education" />
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8">
-          <div className="md:w-1/3">
-            <div className="sticky top-24">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Timeline</h3>
-              <div className="space-y-4">
-                {educationData.map((entry) => (
-                  <button
-                    key={entry.id}
-                    onClick={() => setSelectedEducation(entry)}
-                    className={`w-full text-left p-2 rounded-lg transition-colors duration-200 flex items-center ${
-                      selectedEducation.id === entry.id
-                        ? "bg-primary text-white"
-                        : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-primary/50 dark:hover:bg-primary/50"
-                    }`}
-                  >
-                    <div
-                      className={`w-4 h-4 rounded-full mr-3 ${
-                        selectedEducation.id === entry.id ? "bg-white" : "bg-primary"
+          <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8">
+            <div className="md:w-1/3">
+              <div className="sticky top-24">
+                <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Timeline</h3>
+                <div className="space-y-4">
+                  {educationData.map((entry) => (
+                    <button
+                      key={entry.id}
+                      onClick={() => setSelectedEducation(entry)}
+                      className={`w-full text-left p-2 rounded-lg transition-colors duration-200 flex items-center ${
+                        selectedEducation.id === entry.id
+                          ? "bg-primary text-white"
+                          : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-primary/50 dark:hover:bg-primary/50"
                       }`}
-                    ></div>
-                    <span>{entry.year}</span>
-                  </button>
-                ))}
+                    >
+                      <div
+                        className={`w-4 h-4 rounded-full mr-3 ${
+                          selectedEducation.id === entry.id ? "bg-white" : "bg-primary"
+                        }`}
+                      ></div>
+                      <span>{entry.year}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
+            <div className="md:w-2/3">
+              <AnimatePresence mode="wait">
+                <EducationCard key={selectedEducation.id} entry={selectedEducation} />
+              </AnimatePresence>
+            </div>
           </div>
-          <div className="md:w-2/3">
-            <AnimatePresence mode="wait">
-              <EducationCard key={selectedEducation.id} entry={selectedEducation} />
-            </AnimatePresence>
-          </div>
-        </div>
-      </div>
+      </MainPadding>
     </section>
   )
 }

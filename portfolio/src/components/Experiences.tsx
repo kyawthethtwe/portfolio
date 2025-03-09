@@ -4,6 +4,7 @@ import type React from "react"
 import { motion } from "framer-motion"
 import { Briefcase, Calendar } from "lucide-react"
 import HeaderLine from "./HeaderLine"
+import MainPadding from "./MainPadding"
 interface ExperienceEntry {
   id: number
   jobTitle: string
@@ -13,38 +14,54 @@ interface ExperienceEntry {
 }
 
 const experienceData: ExperienceEntry[] = [
+  //internship
   {
     id: 1,
-    jobTitle: "Senior Frontend Developer",
-    company: "Tech Innovations Inc.",
-    duration: "Jan 2022 - Present",
+    jobTitle: "Frontend Developer Intern",
+    company: "App Intouch Co., Ltd.",
+    duration: "Jan 2025 - Present",
     responsibilities: [
-      "Lead a team of 5 developers in creating responsive web applications",
-      "Implement and maintain CI/CD pipelines for frontend projects",
-      "Conduct code reviews and mentor junior developers",
-    ],
+      "Contributed to frontend development using Next.js, React, and TypeScript in an agile team environment",
+      "Implemented responsive UI components following design specifications and accessibility standards",
+      "Collaborated with senior developers to optimize application performance and improve code quality",
+      "Assisted in integrating RESTful APIs and managing application state using React hooks",
+      "Participated in code reviews and implemented feedback to enhance development skills"
+    ]
   },
+  //volunteer frontend developer at rangsit university language center
   {
     id: 2,
-    jobTitle: "Frontend Developer",
-    company: "Web Solutions Co.",
-    duration: "Mar 2019 - Dec 2021",
+    jobTitle: "Volunteer Frontend Developer",
+    company: "Rangsit University Language Center",
+    duration: "Jan 2024 - Apr 2024",
     responsibilities: [
-      "Developed and maintained multiple client websites using React and Next.js",
-      "Collaborated with UX designers to implement pixel-perfect, responsive designs",
-      "Optimized website performance, achieving a 40% increase in load speed",
-    ],
+      "Contributed to the enhancement of digital resources and improving the user experience and functionality of the center's website",
+      "Developed responsive UI components using HTML, CSS, and JavaScript",
+      "Implemented state management and reusable components using React.js and Tailwind CSS",
+      "Collaborated with the team to meet project deadlines and deliver high-quality code"
+    ] 
   },
   {
     id: 3,
-    jobTitle: "Frontend Developer Intern",
-    company: "StartUp Nexus",
-    duration: "Jun 2018 - Feb 2019",
+    jobTitle: "Tech Seminar Management",
+    company: "Rangsit University",
+    duration: "Sep 2023 - Dec 2023",
     responsibilities: [
-      "Assisted in the development of a React-based dashboard for data visualization",
-      "Learned and applied best practices in version control using Git",
-      "Participated in daily stand-ups and sprint planning meetings",
-    ],
+      "Coordinated and managed a university tech seminar with a team",
+      "Collaborated with team members to plan and execute seminar activities, including speaker coordination and event promotion",
+      "Demonstrated strong teamwork in handling responsibilities such as registration, venue setup, and participant engagement"
+    ]
+  },
+  {
+    id: 4,
+    jobTitle: "Hackathon Finalist",
+    company: "Rangsit University",
+    duration: "Aug 2023",
+    responsibilities: [
+      "Participated in University Hackathon, where I collaborated with a team to develop a project with Gemini AI technology",
+      "Utilized specific technologies or skills, e.g., JavaScript, React, APIs, Gemini AI to create innovative solutions under time constraints",
+      "Gained valuable experience in rapid prototyping, problem-solving, and teamwork"
+    ]
   },
 ]
 
@@ -86,14 +103,14 @@ const ExperienceCard: React.FC<{ entry: ExperienceEntry; index: number }> = ({ e
 const Experience: React.FC = () => {
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900" id="experience">
-      <div className="container mx-auto px-4">
+      <MainPadding>
         <HeaderLine title="Experience" />
         <div className="max-w-3xl mx-auto">
           {experienceData.map((entry, index) => (
             <ExperienceCard key={entry.id} entry={entry} index={index} />
           ))}
         </div>
-      </div>
+      </MainPadding>
     </section>
   )
 }

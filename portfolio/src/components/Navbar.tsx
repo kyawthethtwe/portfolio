@@ -5,6 +5,7 @@ import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { MoonIcon, SunIcon, MenuIcon, XIcon } from "lucide-react"
 import Link from "next/link"
+import MainPadding from "./MainPadding"
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme()
@@ -21,7 +22,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <MainPadding className="flex flex-wrap items-center justify-between py-4">
         <Link href="/" className="flex items-center">
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">KTH</span>
         </Link>
@@ -54,7 +55,7 @@ export default function Navbar() {
             ))}
           </ul>
         </div>
-      </div>
+      </MainPadding>
     </nav>
   )
 }
