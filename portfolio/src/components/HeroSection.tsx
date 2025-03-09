@@ -2,10 +2,28 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { DownloadIcon } from "lucide-react"
 export default function HeroSection() {
+
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects')
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const downloadResume = () => {
+    // Create a link to your resume file
+    const link = document.createElement('a')
+    link.href = '/resume.pdf' // Make sure to place your resume.pdf in the public folder
+    link.download = 'Kyaw_Thet_Htwe_Resume.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen bg-white dark:bg-gray-900 text-center px-4">
-        <div className="absolute inset-0  opacity-20 dark:opacity-30">
+      <div className="absolute inset-0  opacity-20 dark:opacity-30 pointer-events-none ">
         <svg
           className="w-full h-full "
           xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +66,19 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
       >
-        <Button className="">View My Work</Button>
-        <Button >Download Resume</Button>
+        <Button 
+          onClick={scrollToProjects}
+        >
+          View My Work
+        </Button>
+        <Button 
+          onClick={downloadResume}
+        >
+          <DownloadIcon className="w-5 h-5 mr-2" />
+          Download Resume
+        </Button>
       </motion.div>
+
     </section>
   )
 }

@@ -6,6 +6,8 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import HeaderLine from "./HeaderLine"
+import MainPadding from "./MainPadding"
+import Link from "next/link"
 
 interface Project {
   id: number
@@ -13,8 +15,8 @@ interface Project {
   description: string
   image: string
   techStack: string[]
-  liveDemo: string
-  githubRepo: string
+  liveDemo?: string
+  githubRepo?: string
 }
 
 const projects: Project[] = [
@@ -23,37 +25,42 @@ const projects: Project[] = [
     name: "E-commerce Platform",
     description:
       "A full-featured e-commerce platform with user authentication, product catalog, and payment integration.",
-    image: "/s-project.jpg",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
-    liveDemo: "https://example.com/ecommerce",
-    githubRepo: "https://github.com/yourusername/ecommerce",
+    image: "/Ecommerce.png",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "React Hook Form", "React Query"],
+    githubRepo: "https://github.com/kyawthethtwe/E-commerce",
   },
   {
     id: 2,
-    name: "Task Management App",
-    description: "A collaborative task management application with real-time updates and team features.",
-    image: "/s-project.jpg",
-    techStack: ["React", "Node.js", "Express", "MongoDB"],
-    liveDemo: "https://example.com/taskapp",
-    githubRepo: "https://github.com/yourusername/taskapp",
+    name: "RMUTI University Website",
+    description: "A university website for RMUTI university showcasing programs, events, and student activities. The website is built during my internship at App Intouch CO., Ltd. The website is not finished yet and still in development.",
+    image: "/rmuti.png",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Swiper.js"],
+    liveDemo: "https://ba-rmuti-website.vercel.app/",
   },
   {
     id: 3,
-    name: "Weather Dashboard",
-    description: "A responsive weather dashboard that provides real-time weather information and forecasts.",
+    name: "Room Rental Website Frontend",
+    description: "A platform for renting rooms and apartments, allowing users to search and book accommodations. I've built this project to practice integrating APIs and working with various libraries.",
     image: "/s-project.jpg",
-    techStack: ["React", "OpenWeather API", "Chart.js"],
-    liveDemo: "https://example.com/weather",
-    githubRepo: "https://github.com/yourusername/weather-dashboard",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Axios", "Shadcn Ui"],
+    githubRepo: "https://github.com/Cee-X/Room-Rental-Frontend",
   },
   {
     id: 4,
+    name: "Room Rental Website Backend",
+    description: "The backend server for the room rental website project. It handles user authentication, room booking, and data management.",
+    image: "/s-project.jpg",
+    techStack: ["Express.js", "TypeScript", "MongoDB", "JWT", "Bcrypt", "Google Cloud Storage"],
+    githubRepo: "https://github.com/Cee-X/Room-Rental-Backend",
+  },
+  {
+    id: 5,
     name: "Portfolio Website",
     description: "A personal portfolio website showcasing projects and skills (the one you're looking at right now!).",
-    image: "/s-project.jpg",
+    image: "/r_portfolio.png",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    liveDemo: "https://example.com/portfolio",
-    githubRepo: "https://github.com/yourusername/portfolio",
+    liveDemo: "https://portfolio-kyawthethtwe595-gmailcoms-projects.vercel.app/",
+    githubRepo: "https://github.com/kyawthethtwe/portfolio",
   },
 ]
 
@@ -69,7 +76,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
       alt={`${project.name} project screenshot`}
       width={500}
       height={300}
-      className="w-full h-48 object-cover"
+      className="w-full h-72 object-cover object-center"
     />
     <div className="p-6">
       <h3 className="text-xl font-bold mb-2  dark:text-white">{project.name}</h3>
@@ -85,16 +92,20 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
         ))}
       </div>
       <div className="flex space-x-4">
-        <Button asChild>
-          <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-            Live Demo
-          </a>
-        </Button>
-        <Button  asChild>
-          <a href={project.githubRepo} target="_blank" rel="noopener noreferrer">
-            GitHub Repo
-          </a>
-        </Button>
+        {project.liveDemo && (
+          <Button asChild>
+            <Link href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+              Live Demo
+            </Link>
+          </Button>
+        )}
+        {project.githubRepo && (
+          <Button asChild>
+            <Link href={project.githubRepo} target="_blank" rel="noopener noreferrer">
+              GitHub Repo
+            </Link>
+          </Button>
+        )}
       </div>
     </div>
   </motion.div>
@@ -103,14 +114,14 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
 export default function Projects() {
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900" id="projects">
-      <div className="container mx-auto px-4">
+      <MainPadding >
         <HeaderLine title="Projects" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
-      </div>
+      </MainPadding>
     </section>
   )
 }

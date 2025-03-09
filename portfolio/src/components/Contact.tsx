@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { LinkedinIcon, GithubIcon, MailIcon, PhoneIcon, MapPinIcon, Loader2, Send } from "lucide-react"
 import HeaderLine from "./HeaderLine"
+import MainPadding from './MainPadding';
 
 const Contact: React.FC = () => {
   const [name, setName] = useState("")
@@ -38,12 +39,11 @@ const Contact: React.FC = () => {
 
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+      <MainPadding>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-6xl mx-auto"
         >
           <HeaderLine title="Contact" />
           
@@ -139,7 +139,7 @@ const Contact: React.FC = () => {
                     <MailIcon className="w-5 h-5 mr-3 text-primary" />
                     <a
                       href="mailto:kyawthethtwe595@gmail.com"
-                      className="text-gray-600  transition-colors"
+                      className="text-gray-600 dark:text-gray-300 transition-colors"
                     >
                       kyawthethtwe595@gmail.com
                     </a>
@@ -147,7 +147,7 @@ const Contact: React.FC = () => {
                   <div className="flex items-center">
                     <PhoneIcon className="w-5 h-5 mr-3 text-teal-500 dark:text-teal-400" />
                     <a
-                      href="tel:+1234567890"
+                      href="tel:0612736866"
                       className="text-gray-600 dark:text-gray-300 transition-colors"
                     >
                       0612736866
@@ -189,7 +189,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
         </motion.div>
-      </div>
+      </MainPadding>
     </section>
   )
 }
