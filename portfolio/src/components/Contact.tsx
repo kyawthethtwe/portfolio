@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900" id="contact">
       <MainPadding>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
