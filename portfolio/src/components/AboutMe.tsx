@@ -31,7 +31,7 @@ export default function AboutMe() {
         >
           {/* Image Column */}
           <motion.div
-            className="w-full md:w-1/2 h-[400px] "
+            className="w-full md:w-1/2 h-[400px] 2xl:h-[550px] "
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -71,7 +71,7 @@ export default function AboutMe() {
             >
               {aboutTexts.map((text, index) => (
                 <SwiperSlide key={index}>
-                  <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">{text}</p>
+                  <p className="text-lg 2xl:text-xl text-gray-600 dark:text-gray-300 mb-6">{text}</p>
                 </SwiperSlide>
               ))}
             </Swiper>

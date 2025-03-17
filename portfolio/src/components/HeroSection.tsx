@@ -22,7 +22,7 @@ export default function HeroSection() {
     document.body.removeChild(link)
   }
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen bg-white dark:bg-gray-900 text-center px-4">
+    <section id="home" className="relative flex flex-col items-center justify-center min-h-screen bg-white dark:bg-gray-900 text-center px-4">
       <div className="absolute inset-0  opacity-20 dark:opacity-30 pointer-events-none ">
         <svg
           className="w-full h-full "
@@ -43,7 +43,7 @@ export default function HeroSection() {
         </svg>
       </div>
       <motion.h1
-        className="text-4xl md:text-6xl font-bold mb-4 "
+        className="text-4xl md:text-6xl 2xl:text-7xl font-bold mb-4 "
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -52,7 +52,7 @@ export default function HeroSection() {
       </motion.h1>
 
       <motion.p
-        className="text-lg md:text-xl mb-8"
+        className="text-lg md:text-xl 2xl:text-2xl mb-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.0 }}
@@ -74,7 +74,7 @@ export default function HeroSection() {
         <Button 
           onClick={downloadResume}
         >
-          <DownloadIcon className="w-5 h-5 mr-2" />
+          <DownloadIcon className="w-5 h-5 mr-2 2xl:w-7 2xl:h-7" />
           Download Resume
         </Button>
       </motion.div>

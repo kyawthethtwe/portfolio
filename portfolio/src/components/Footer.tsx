@@ -33,15 +33,15 @@ export default function Footer() {
 
         {/* Social Media Icons */}
         <div className="flex space-x-5 mt-4 md:mt-0 ">
-          <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+          <Link href="https://github.com/Cee-X" target="_blank" rel="noopener noreferrer">
             <FaGithub className="text-2xl 2xl:text-3xl hover:text-accent transition-colors" />
-          </a>
-          <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
+          </Link>
+          <Link href="https://www.linkedin.com/in/kyaw-thet-htwe-856b59201/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="text-2xl 2xl:text-3xl hover:text-accent transition-colors" />
-          </a>
-          <a href="mailto:your@email.com">
+          </Link>
+          <Link href="mailto:kyawthethtwe595@gmail.com">
             <FaEnvelope className="text-2xl 2xl:text-3xl  hover:text-accent transition-colors" />
-          </a>
+          </Link>
         </div>
 
       </div>
