@@ -29,11 +29,11 @@ const TechIcons = ({ Icon, name, description }: { Icon: React.ElementType; name:
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <Icon className="w-12 h-12 text-primary mb-2" />
-          <span className="text-sm text-gray-600 dark:text-gray-400">{name}</span>
+          <Icon className="w-12 h-12 2xl:w-14 2xl:h-14 text-primary mb-2" />
+          <span className="text-sm xl:text-base 2xl:text-lg text-gray-600 dark:text-gray-400">{name}</span>
         </motion.div>
       </TooltipTrigger>
-      <TooltipContent className="w-[200px] bg-white">
+      <TooltipContent className="w-[200px] 2xl:w-[250px] bg-white">
         <p className="text-sm text-black">{description}</p>
       </TooltipContent>
     </Tooltip>
@@ -45,12 +45,12 @@ export default function Techstacks() {
     {
         Icon: SiNextdotjs,
         name: "Next.js",
-        description: "I use Next.js for server-side rendering and creating fast, SEO-friendly React applications.",
+        description: "I build fast and scalable web applications using Next.js for React.",
     },
     {
         Icon: SiTypescript,
         name: "TypeScript",
-        description: "I leverage TypeScript to write more robust and maintainable JavaScript code.",
+        description: "I write type-safe JavaScript using TypeScript for scalable and maintainable codebases.",
     },
     {
         Icon: SiAxios,
@@ -112,7 +112,7 @@ export default function Techstacks() {
       transition={{ duration: 0.5 }}
       >
         <HeaderLine title="Tech Stack" />
-        <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-8">
           {techs.map((tech, index) => (
             <TechIcons key={index} Icon={tech.Icon} name={tech.name} description={tech.description} />
           ))}

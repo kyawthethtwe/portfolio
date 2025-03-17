@@ -73,22 +73,22 @@ const ExperienceCard: React.FC<{ entry: ExperienceEntry; index: number }> = ({ e
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="flex flex-col md:flex-row gap-4 mb-8"
     >
-      <div className="flex-none w-full md:w-48 text-center md:text-right">
+      <div className="flex-none w-full md:w-52 2xl:w-60 text-center md:text-right">
         <div className="inline-flex items-center justify-center md:justify-end w-full">
-          <Calendar className="w-5 h-5 mr-2 text-primary" />
-          <span className="font-semibold text-gray-600 dark:text-gray-300">{entry.duration}</span>
+          <Calendar className="w-5 h-5 2xl:w-7 2xl:h-7 mr-2 text-primary" />
+          <span className="font-semibold text-gray-600 dark:text-gray-300 text-base 2xl:text-lg">{entry.duration}</span>
         </div>
       </div>
       <div className="flex-grow">
         <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-          <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{entry.jobTitle}</h3>
+          <h3 className="text-xl 2xl:text-2xl font-bold text-gray-800 dark:text-white mb-2">{entry.jobTitle}</h3>
           <div className="flex items-center mb-4">
             <Briefcase className="w-5 h-5 mr-2 text-primary" />
-            <span className="text-gray-600 dark:text-gray-300">{entry.company}</span>
+            <span className="text-gray-600 dark:text-gray-300 text-base 2xl:text-lg">{entry.company}</span>
           </div>
           <ul className="mt-4 space-y-2">
             {entry.responsibilities.map((responsibility, i) => (
-              <li key={i} className="flex items-start">
+              <li key={i} className="flex items-start text-base 2xl:text-lg">
                 <span className="text-accent mr-2">•</span>
                 <span className="text-gray-600 dark:text-gray-300">{responsibility}</span>
               </li>
@@ -105,7 +105,7 @@ const Experience: React.FC = () => {
     <section className="py-16 bg-gray-50 dark:bg-gray-900" id="experience">
       <MainPadding>
         <HeaderLine title="Experience" />
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl 2xl:max-w-5xl mx-auto">
           {experienceData.map((entry, index) => (
             <ExperienceCard key={entry.id} entry={entry} index={index} />
           ))}
