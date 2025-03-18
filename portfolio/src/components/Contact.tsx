@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useRef, useState } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -10,34 +10,39 @@ import { LinkedinIcon, GithubIcon, MailIcon, PhoneIcon, MapPinIcon, Loader2, Sen
 import HeaderLine from "./HeaderLine"
 import MainPadding from './MainPadding';
 import Link from "next/link"
-import emailjs from '@emailjs/browser';
 const Contact: React.FC = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
-  const formRef = useRef<HTMLFormElement>(null)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus("idle")
-    if(!formRef.current) return
-    // Simulating an API call
+    
     try {
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! 
-      )
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+      
       setSubmitStatus("success")
       setName("")
       setEmail("")
       setMessage("")
     } catch (error) {
+      console.error('Error sending message:', error);
       setSubmitStatus("error")
-      console.error(error)
     } finally {
       setIsSubmitting(false)
     }
