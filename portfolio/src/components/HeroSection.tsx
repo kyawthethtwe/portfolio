@@ -68,11 +68,13 @@ export default function HeroSection() {
       >
         <Button 
           onClick={scrollToProjects}
+          aria-label="View My Work"
         >
           View My Work
         </Button>
         <Button 
           onClick={downloadResume}
+          aria-label="Download Resume"
         >
           <DownloadIcon className="w-5 h-5 mr-2 2xl:w-7 2xl:h-7" />
           Download Resume

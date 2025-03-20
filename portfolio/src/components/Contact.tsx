@@ -114,6 +114,7 @@ const Contact: React.FC = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
+                    aria-label="Send Message"
                   >
                     {isSubmitting ? (
                       <>

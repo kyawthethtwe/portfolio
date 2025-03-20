@@ -4,11 +4,37 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/StructureData";
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Kyaw Thet Htwe - Frontend Developer",
-  description: "Portfolio of Kyaw Thet Htwe, a Frontend Developer specializing in Next.js and TypeScript",
+  title: "Kyaw Thet Htwe | Frontend Developer | Next.js & TypeScript",
+  description: "Portfolio of Kyaw Thet Htwe, a Frontend Developer specializing in Next.js, React, and TypeScript. View projects and experience.",
+  keywords: ["Frontend Developer", "Next.js", "TypeScript", "React", "Web Development", "Portfolio", "Kyaw Thet Htwe"],
+  authors: [{ name: "Kyaw Thet Htwe" }],
+  creator: "Kyaw Thet Htwe",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://your-domain.com/",
+    title: "Kyaw Thet Htwe | Frontend Developer",
+    description: "Frontend Developer specializing in Next.js and TypeScript. View my projects and experience.",
+    siteName: "Kyaw Thet Htwe Portfolio",
+    images: [
+      {
+        url: "/og-image.jpg", // Create this image in your public folder
+        width: 1200,
+        height: 630,
+        alt: "Kyaw Thet Htwe - Frontend Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kyaw Thet Htwe | Frontend Developer",
+    description: "Frontend Developer specializing in Next.js and TypeScript. View my projects and experience.",
+    images: ["/og-image.jpg"],
+  },
 }
 
 export default function RootLayout({
@@ -26,6 +52,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </ThemeProvider>
+        <StructuredData />
       </body>
     </html>
   );
