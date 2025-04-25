@@ -28,6 +28,7 @@ const projects: Project[] = [
     image: "/Ecommerce.png",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "React Hook Form", "React Query"],
     githubRepo: "https://github.com/kyawthethtwe/E-commerce",
+    liveDemo: "https://she-liart.vercel.app/"
   },
   {
     id: 2,
@@ -59,7 +60,7 @@ const projects: Project[] = [
     description: "A personal portfolio website showcasing projects and skills (the one you're looking at right now!).",
     image: "/r_portfolio.png",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    liveDemo: "https://portfolio-kyawthethtwe595-gmailcoms-projects.vercel.app/",
+    liveDemo: "https://www.kyawthethtwe.me/",
     githubRepo: "https://github.com/kyawthethtwe/portfolio",
   },
 ]

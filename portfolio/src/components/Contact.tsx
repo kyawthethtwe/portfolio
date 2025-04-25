@@ -1,15 +1,15 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
-import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { LinkedinIcon, GithubIcon, MailIcon, PhoneIcon, MapPinIcon, Loader2, Send } from "lucide-react"
-import HeaderLine from "./HeaderLine"
-import MainPadding from './MainPadding';
+import { motion } from "framer-motion"
+import { GithubIcon, LinkedinIcon, Loader2, MailIcon, MapPinIcon, PhoneIcon, Send } from "lucide-react"
 import Link from "next/link"
+import type React from "react"
+import { useState } from "react"
+import HeaderLine from "./HeaderLine"
+import MainPadding from './MainPadding'
 const Contact: React.FC = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -36,6 +36,8 @@ const Contact: React.FC = () => {
         throw new Error(data.error || 'Failed to send message');
       }
       
+      // Successfully sent email via Resend
+      console.log('Email sent with ID:', data.id);
       setSubmitStatus("success")
       setName("")
       setEmail("")

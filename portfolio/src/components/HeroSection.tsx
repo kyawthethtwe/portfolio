@@ -1,10 +1,9 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
 import { DownloadIcon } from "lucide-react"
 export default function HeroSection() {
-
   const scrollToProjects = () => {
     const projectsSection = document.getElementById('projects')
     if (projectsSection) {
@@ -15,24 +14,28 @@ export default function HeroSection() {
   const downloadResume = () => {
     // Create a link to your resume file
     const link = document.createElement('a')
-    link.href = '/resume.pdf' // Make sure to place your resume.pdf in the public folder
+    link.href = '/resume.pdf'
     link.download = 'Kyaw_Thet_Htwe_Resume.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
   }
+  
   return (
     <section id="home" className="relative flex flex-col items-center justify-center min-h-screen bg-white dark:bg-gray-900 text-center px-4">
-      <div className="absolute inset-0  opacity-20 dark:opacity-30 pointer-events-none ">
+      {/* Optimized background blob with better responsiveness */}
+      <div className="absolute inset-0 opacity-20 dark:opacity-30 pointer-events-none overflow-hidden">
         <svg
-          className="w-full h-full "
+          className="w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 800 600"
           fill="none"
+          aria-hidden="true"
         >
           <path
             d="M200 300c100-150 300-150 400 0s100 250-50 300-350-100-350-250z"
             fill="url(#gradient)"
+            className="transform-gpu transition-transform duration-1000 ease-in-out hover:scale-105"
           />
           <defs>
             <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
