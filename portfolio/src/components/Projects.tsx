@@ -31,14 +31,6 @@ const projects: Project[] = [
     liveDemo: "https://she-liart.vercel.app/"
   },
   {
-    id: 2,
-    name: "RMUTI University Website",
-    description: "A university website for RMUTI university showcasing programs, events, and student activities. The website is built during my internship at App Intouch CO., Ltd. The website is not finished yet and still in development.",
-    image: "/rmuti.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Swiper.js"],
-    liveDemo: "https://ba-rmuti-website.vercel.app/",
-  },
-  {
     id: 3,
     name: "Room Rental Website Frontend",
     description: "A platform for renting rooms and apartments, allowing users to search and book accommodations. I've built this project to practice integrating APIs and working with various libraries.",
