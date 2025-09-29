@@ -12,7 +12,6 @@ export default function HeroSection() {
   }
 
   const downloadResume = () => {
-    // Create a link to your resume file
     const link = document.createElement('a')
     link.href = '/resume.pdf'
     link.download = 'Kyaw_Thet_Htwe_Resume.pdf'
@@ -60,7 +59,7 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.0 }}
       >
-        Frontend Developer | Next.js & TypeScript Enthusiast
+        Fullstack Developer | Next.js, Typescript & Node.js Enthusiast
       </motion.p>
 
       <motion.div

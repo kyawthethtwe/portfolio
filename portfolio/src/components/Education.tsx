@@ -21,15 +21,15 @@ const educationData: EducationEntry[] = [
     degree: "Bachelor's",
     major: "Information and Communication Technology",
     university: "Rangsit University",
-    year: "2022",
-    achievements: ["GPAX 3.78", "University Hackathon Finalist"],
+    year: "2022-2025",
+    achievements: ["GPAX 3.80", "University Hackathon Finalist"],
   },
   {
     id: 2,
     degree: "Bachelor's",
     major: "Computer Science",
     university: "University of Computer Studies, Mandalay",
-    year: "2017",
+    year: "2017-2019",
   },
   {
     id: 3,

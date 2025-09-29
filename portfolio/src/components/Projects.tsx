@@ -22,13 +22,21 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    name: "E-commerce Platform",
+    name: "Secondhand E-commerce Platform",
     description:
-      "A full-featured e-commerce platform with user authentication, product catalog, and payment integration.",
+      "A full-featured e-commerce platform with user authentication, product catalog, cart management and wishlist functionality.",
     image: "/Ecommerce.png",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "React Hook Form", "React Query"],
     githubRepo: "https://github.com/kyawthethtwe/E-commerce",
     liveDemo: "https://she-liart.vercel.app/"
+  },
+  {
+    id: 2,
+    name: "Secondhand E-commerce Backend",
+    description: "The backend server for the e-commerce platform, handling user authentication, product management, and order processing.",
+    image: "/Ecommerce.png",
+    techStack: ["Nest.js", "TypeScript", "Cloudinary", "Supabase", "TypeORM"],
+    githubRepo: "https://github.com/kyawthethtwe/second-hand-backend",
   },
   {
     id: 3,

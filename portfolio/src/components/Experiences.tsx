@@ -14,12 +14,28 @@ interface ExperienceEntry {
 }
 
 const experienceData: ExperienceEntry[] = [
+  //remote fulltime job at Shwe Ngwe Aung Holdings Limited
+  //kinda watchtoger web app using nextjs, typescript, tailwindcss, mongodb, nodejs, express , mediasoup and socket.io
+  //currently working on it as a fullstack developer
+  {
+    id: 0,
+    jobTitle: "Fullstack Developer",
+    company: "Shwe Ngwe Aung Holdings Limited (Remote)",
+    duration: "May 2025 - Present",
+    responsibilities: [
+      "Developing and maintaining a watch-together web application using Next.js, TypeScript, Tailwind CSS, MongoDB, Node.js, Express, Mediasoup, and Socket.io",
+      "Implementing responsive UI components and ensuring cross-browser compatibility",
+      "Implementing real-time features using WebRTC and Socket.io for seamless user interactions",
+      "Implementing API endpoints and managing database operations using Express and MongoDB",
+      "Collaborating with the team to plan and execute new features and improvements"
+    ]
+  },
   //internship
   {
     id: 1,
     jobTitle: "Frontend Developer Intern",
     company: "App Intouch Co., Ltd.",
-    duration: "Jan 2025 - Present",
+    duration: "Jan 2025 - Apr 2025",
     responsibilities: [
       "Contributed to frontend development using Next.js, React, and TypeScript in an agile team environment",
       "Implemented responsive UI components following design specifications and accessibility standards",

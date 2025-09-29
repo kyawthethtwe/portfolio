@@ -18,7 +18,7 @@ export default function AboutMe() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
   
   const aboutTexts = [
-    "I'm a passionate frontend developer with expertise in building modern web applications. With a strong foundation in Next.js and TypeScript, I create efficient, scalable, and user-friendly interfaces that deliver exceptional user experiences.",
+    "I'm a passionate fullstack developer with expertise in building modern web applications. With a strong foundation in Next.js and TypeScript, I create efficient, scalable, and user-friendly interfaces that deliver exceptional user experiences.",
     "My journey in web development started 2 years ago, and since then, I've been constantly learning and adapting to new technologies. I believe in writing clean, maintainable code and creating intuitive user interfaces.",
     "When I'm not coding, you can find me exploring the great outdoors, reading books, or playing video games. I'm always looking for new challenges and opportunities to grow as a developer and as an individual.",
     "I'm currently seeking new opportunities to work on exciting projects and collaborate with talented individuals. If you're interested in working together, feel free to reach out to me via email or LinkedIn.",

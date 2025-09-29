@@ -15,6 +15,10 @@ import {
   SiZod,
   SiReacthookform,
   SiNodedotjs,
+  SiNestjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql
 } from "react-icons/si"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import HeaderLine from "./HeaderLine"
@@ -99,7 +103,27 @@ export default function Techstacks() {
         Icon: SiNodedotjs,
         name: "Node.js",
         description: "I build scalable server-side applications using Node.js, Express.js and Nest.js.",
-    }
+    },
+    {
+        Icon: SiExpress,
+        name: "Express.js",
+        description: "I create robust RESTful APIs using Express.js for server-side applications.",
+    },
+    {
+        Icon: SiNestjs,
+        name: "Nest.js",
+        description: "I develop scalable and maintainable server-side applications using Nest.js framework.",
+    },
+    {
+        Icon: SiMongodb,
+        name: "MongoDB",
+        description: "I design flexible NoSQL databases using MongoDB for modern web applications.",
+    },
+    {
+        Icon: SiPostgresql,
+        name: "PostgreSQL",
+        description: "I manage relational databases using PostgreSQL for data integrity and complex queries.",
+    },
   ]
 
   return (
