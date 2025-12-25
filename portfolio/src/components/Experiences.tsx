@@ -14,9 +14,6 @@ interface ExperienceEntry {
 }
 
 const experienceData: ExperienceEntry[] = [
-  //remote fulltime job at Shwe Ngwe Aung Holdings Limited
-  //kinda watchtoger web app using nextjs, typescript, tailwindcss, mongodb, nodejs, express , mediasoup and socket.io
-  //currently working on it as a fullstack developer
   {
     id: 0,
     jobTitle: "Fullstack Developer",
@@ -30,7 +27,6 @@ const experienceData: ExperienceEntry[] = [
       "Collaborating with the team to plan and execute new features and improvements"
     ]
   },
-  //internship
   {
     id: 1,
     jobTitle: "Frontend Developer Intern",
@@ -44,7 +40,6 @@ const experienceData: ExperienceEntry[] = [
       "Participated in code reviews and implemented feedback to enhance development skills"
     ]
   },
-  //volunteer frontend developer at rangsit university language center
   {
     id: 2,
     jobTitle: "Volunteer Frontend Developer",
@@ -72,7 +67,7 @@ const experienceData: ExperienceEntry[] = [
     id: 4,
     jobTitle: "Hackathon Finalist",
     company: "Rangsit University",
-    duration: "Aug 2023",
+    duration: "April 2024",
     responsibilities: [
       "Participated in University Hackathon, where I collaborated with a team to develop a project with Gemini AI technology",
       "Utilized specific technologies or skills, e.g., JavaScript, React, APIs, Gemini AI to create innovative solutions under time constraints",
